@@ -3523,7 +3523,7 @@
       <div id="u49273" class="ax_default sticky_1">
         <div id="u49273_div" class=""></div>
         <div id="u49273_text" class="text ">
-          <p><span>后台每增加/减少一个阶段，平台展示部分就要对应的增加或者减少</span></p>
+          <p><span>1.后台每增加/减少一个阶段，平台展示部分就要对应的增加或者减少</span></p><p><span>2.第1阶段不能删除</span></p><p><span>3.删除了中间的阶段后，下方的阶段会向上顶替</span></p><p><span>&nbsp;&nbsp;&nbsp; 3.1如有1、2、3三个阶段，将2阶段删除后，3阶段就会变为2阶段，平台端的2阶段也会去掉，3阶段的信息会顶成2阶段，以此类推</span></p>
         </div>
       </div>
 
@@ -3948,7 +3948,7 @@
       <div id="u49335" class="ax_default sticky_1">
         <div id="u49335_div" class=""></div>
         <div id="u49335_text" class="text ">
-          <p><span>文本配置部分，都需要支持富文本</span></p>
+          <p><span>1.文本配置部分，都需要支持富文本</span></p><p><span>2.活动的广告图，几个文案如果有修改，会实时更新到平台</span></p>
         </div>
       </div>
 
@@ -4185,7 +4185,247 @@
       <div id="u49367" class="ax_default sticky_1">
         <div id="u49367_div" class=""></div>
         <div id="u49367_text" class="text ">
-          <p><span>1.第X阶段的文字：X使用数字，自增长，其他的配置再多语言表</span></p><p><span>2.最高金额：最高的文案配置在多语言表，金额读取对应的调用奖金配置</span></p><p><span><br></span></p><p><span>阶段活动状态：已领取 | 进行中 | 未进行</span></p><p><span>3.状态底图：[已领取]:置灰&nbsp;&nbsp; [进行中]：高亮&nbsp;&nbsp; [未进行]：无底色</span></p><p><span>4.状态标签：[已领取]:已领取&nbsp;&nbsp; [进行中]：进行中&nbsp; &nbsp; [未进行]：无标签</span></p><p><span>5.按钮：文案在多语言表配置，</span></p><p><span>6.按钮状态：：[已领取]:置灰，不可点击&nbsp; &nbsp;&nbsp; [进行中]：高亮，点击跳转充值弹窗&nbsp;&nbsp; [未进行]：加灰色蒙版，带锁</span></p>
+          <p><span>1.第X阶段的文字：X使用数字，自增长，其他的配置再多语言表</span></p><p><span>2.最高金额：最高的文案配置在多语言表，金额读取对应的调用奖金配置</span></p><p><span>3.状态底图：[已领取]:置灰&nbsp;&nbsp; [进行中]：高亮&nbsp;&nbsp; [未进行]：无底色，任务状态发生改变时，自动改变</span></p><p><span>4.状态标签：[已领取]:已领取&nbsp;&nbsp; [进行中]：进行中&nbsp; &nbsp; [未进行]：无标签，任务状态发生改变时，自动改变</span></p><p><span>5.按钮：文案“充值”在前端多语言表配置，</span></p><p><span>6.按钮状态：：[已领取]:置灰，不可点击&nbsp; &nbsp;&nbsp; [进行中]：高亮，点击跳转充值弹窗&nbsp;&nbsp; [未进行]：加灰色蒙版，带锁</span></p><p><span>7.阶段标题：如“150%奖金”，150%读取奖金配置，后端传值，奖金前端配置多语言表</span></p><p><span>8.阶段要求：如“最低充值金额R$60”，R$60后端传值，60在活动配置，货币符号根据活动配置的国家配置，最低充值金额前端配置多语言表</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49368" class="ax_default sticky_3">
+        <div id="u49368_div" class=""></div>
+        <div id="u49368_text" class="text ">
+          <p><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">阶段活动状态包括：已领取 | 进行中 | 未进行</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">1.同一时间只会存在一个[进行中]的任务</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">&nbsp;&nbsp; 1.1用户进入活动页面后，第1阶段的活动默认为[进行中]</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">&nbsp;&nbsp; 1.2活动阶段高于当前状态为[进行中]的任务的状态即为[未进行]</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">2.只有从这个活动页面点击[充值]按钮，跳转充值弹窗并完成充值才能领取奖金，奖金自动发放，进入用户账户，成功发放奖金后，当前的任务状态会变为[已领取]；</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">&nbsp;&nbsp; 2.1用户进入活动后默认状态为第1阶段的状态为[进行中]，第2、3阶段为[未进行]；</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">&nbsp;&nbsp; 2.2如图，用户通过第1阶段的活动跳转并完成充值后，第1阶段的状态变为[已领取]，第2阶段的状态变为[进行中]，第3阶段则保持为[未进行]</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">3.完成了一个阶段后，会立刻解锁下一个阶段，并且此时如果继续充值，可以继续领取奖励，没有活动间隔；有多个阶段时，会依次解锁</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49369" class="ax_default sticky_3">
+        <div id="u49369_div" class=""></div>
+        <div id="u49369_text" class="text ">
+          <p><span>如果活动已生成，并且在线上生成了，此时删除掉活动的阶段，对旧的账号的已生成活动不会有影响，只对新的账号产生影响，新账号看到的活动是改动过后的</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u49370" class="ax_default _图片">
+        <img id="u49370_img" class="img " src="images/新增连续阶段充值/u49370.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49371" class="ax_default box_1">
+        <img id="u49371_img" class="img " src="images/新增连续阶段充值/u49371.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49372" class="ax_default box_1">
+        <img id="u49372_img" class="img " src="images/新增连续阶段充值/u49372.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49373" class="ax_default box_1">
+        <img id="u49373_img" class="img " src="images/新增连续阶段充值/u49372.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49374" class="ax_default box_1">
+        <img id="u49374_img" class="img " src="images/新增连续阶段充值/u49372.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49375" class="ax_default box_1">
+        <img id="u49375_img" class="img " src="images/新增连续阶段充值/u49372.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49376" class="ax_default box_1">
+        <img id="u49376_img" class="img " src="images/新增连续阶段充值/u49372.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49377" class="ax_default box_1">
+        <img id="u49377_img" class="img " src="images/新增连续阶段充值/u49372.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49378" class="ax_default box_1">
+        <img id="u49378_img" class="img " src="images/新增连续阶段充值/u49378.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49379" class="ax_default label">
+        <div id="u49379_div" class=""></div>
+        <div id="u49379_text" class="text ">
+          <p><span>+ $50</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49380" class="ax_default label">
+        <div id="u49380_div" class=""></div>
+        <div id="u49380_text" class="text ">
+          <p><span>+ $150</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u49381" class="ax_default _图片">
+        <img id="u49381_img" class="img " src="images/新增连续阶段充值/u49370.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49382" class="ax_default label">
+        <div id="u49382_div" class=""></div>
+        <div id="u49382_text" class="text ">
+          <p><span>+ $300</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49383" class="ax_default label">
+        <div id="u49383_div" class=""></div>
+        <div id="u49383_text" class="text ">
+          <p><span>+ $500</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49384" class="ax_default label">
+        <div id="u49384_div" class=""></div>
+        <div id="u49384_text" class="text ">
+          <p><span>+ $1,000</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49385" class="ax_default label">
+        <div id="u49385_div" class=""></div>
+        <div id="u49385_text" class="text ">
+          <p><span>+ $2,000</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49386" class="ax_default label">
+        <div id="u49386_div" class=""></div>
+        <div id="u49386_text" class="text ">
+          <p><span>+ $5,000</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49387" class="ax_default label">
+        <div id="u49387_div" class=""></div>
+        <div id="u49387_text" class="text ">
+          <p><span>+ $10,000</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49388" class="ax_default label">
+        <div id="u49388_div" class=""></div>
+        <div id="u49388_text" class="text ">
+          <p><span>+ $19,999</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49389" class="ax_default _一级标题">
+        <div id="u49389_div" class=""></div>
+        <div id="u49389_text" class="text ">
+          <p><span>普通入口进入充值</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49390" class="ax_default _一级标题">
+        <div id="u49390_div" class=""></div>
+        <div id="u49390_text" class="text ">
+          <p><span>连续充值活动按钮跳转至充值</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49391" class="ax_default box_1">
+        <img id="u49391_img" class="img " src="images/新增连续阶段充值/u49391.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49392" class="ax_default box_1">
+        <img id="u49392_img" class="img " src="images/新增连续阶段充值/u49392.png"/>
+      </div>
+
+      <!-- Unnamed (连接线) -->
+      <div id="u49393" class="ax_default _连接线">
+        <img id="u49393_seg0" class="img " src="images/新增连续阶段充值/u49393_seg0.png" alt="u49393_seg0"/>
+        <img id="u49393_seg1" class="img " src="images/新增连续阶段充值/u49393_seg1.png" alt="u49393_seg1"/>
+        <img id="u49393_seg2" class="img " src="images/新增连续阶段充值/u49393_seg2.png" alt="u49393_seg2"/>
+        <img id="u49393_seg3" class="img " src="images/新增连续阶段充值/u49330_seg3.png" alt="u49393_seg3"/>
+        <div id="u49393_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49394" class="ax_default sticky_1">
+        <div id="u49394_div" class=""></div>
+        <div id="u49394_text" class="text ">
+          <p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">1.</span><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">当用户从连续充值活动的广告页点击[充值]按钮后，弹出的充值弹窗，与其他入口进入充值弹窗显示的活动的赠金比例不同</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">2.从活动入口跳转过来的，当选中或者输入的金额高于后台配置的[充值最低值]时，快捷充值按钮下方的赠金金额和输入框后面显示赠金金额都会根据活动配置的奖金的比例，前端进行计算。如左边的两图，左一为正常进入充值页面的状态，左二为配置最低充值金额为50，且活动比例为100%的状态</span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">3.如果配置错误，奖金为具体的固定值，那么前端显示也会显示固定值</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49395" class="ax_default box_1">
+        <img id="u49395_img" class="img " src="images/新增连续阶段充值/u49395.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49396" class="ax_default label">
+        <div id="u49396_div" class=""></div>
+        <div id="u49396_text" class="text ">
+          <p><span>EXTRA $300</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u49397" class="ax_default _图片">
+        <img id="u49397_img" class="img " src="images/新增连续阶段充值/u49397.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49398" class="ax_default _一级标题">
+        <div id="u49398_div" class=""></div>
+        <div id="u49398_text" class="text ">
+          <p><span>活动入口：广告页</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49399" class="ax_default box_1">
+        <img id="u49399_img" class="img " src="images/新增连续阶段充值/u49399.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49400" class="ax_default box_1">
+        <img id="u49400_img" class="img " src="images/新增连续阶段充值/u49400.png"/>
+      </div>
+
+      <!-- Unnamed (连接线) -->
+      <div id="u49401" class="ax_default _连接线">
+        <img id="u49401_seg0" class="img " src="images/新增连续阶段充值/u49401_seg0.png" alt="u49401_seg0"/>
+        <img id="u49401_seg1" class="img " src="images/新增连续阶段充值/u49401_seg1.png" alt="u49401_seg1"/>
+        <img id="u49401_seg2" class="img " src="images/新增连续阶段充值/u49401_seg2.png" alt="u49401_seg2"/>
+        <img id="u49401_seg3" class="img " src="images/新增连续阶段充值/u49401_seg3.png" alt="u49401_seg3"/>
+        <img id="u49401_seg4" class="img " src="images/新增连续阶段充值/u49401_seg4.png" alt="u49401_seg4"/>
+        <img id="u49401_seg5" class="img " src="images/新增连续阶段充值/u49366_seg5.png" alt="u49401_seg5"/>
+        <div id="u49401_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u49402" class="ax_default sticky_1">
+        <div id="u49402_div" class=""></div>
+        <div id="u49402_text" class="text ">
+          <p><span>1.活动入口是活动广告页，点击返回则是返回广告页；</span></p><p><span><br></span></p><p><span>2.如果有配置如banner直接进入详情页，点返回同样是返回广告页</span></p>
         </div>
       </div>
     </div>
